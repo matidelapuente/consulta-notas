@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+    <title>Consulta de Notas</title>
+</head>
+<body>
+    <h1>Consultar Nota</h1>
+    <form method="post">
+        <label for="dni">Ingrese su DNI:</label>
+        <input type="text" name="dni" required>
+        <button type="submit">Consultar</button>
+    </form>
+
+    {% if mensaje %}
+        <p><strong>{{ mensaje }}</strong></p>
+    {% endif %}
+</body>
+</html>
