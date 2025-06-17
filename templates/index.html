@@ -1,18 +1,64 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <title>Notas G15 2P1F (13-06-2025)</title>
+    <meta charset="UTF-8">
+    <title>Mate PI - G15</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        input, button {
+            padding: 0.6rem 1rem;
+            margin-top: 1rem;
+            font-size: 1rem;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .resultado {
+            margin-top: 1.5rem;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <h1>Notas G15 2P1F (13-06-2025)</h1>
-    <form method="post">
-        <label for="dni">Ingrese su DNI:</label>
-        <input type="text" name="dni" required>
-        <button type="submit">Consultar</button>
-    </form>
-
-    {% if mensaje %}
-        <p><strong>{{ mensaje }}</strong></p>
-    {% endif %}
+    <div class="container">
+        <h1>Notas G15 2P1F (13-06-2025)</h1>
+        <form method="post">
+            <input type="text" name="dni" placeholder="Ingresá tu DNI" required>
+            <br>
+            <button type="submit">Consultar</button>
+        </form>
+        {% if resultado %}
+            <div class="resultado">{{ resultado }}</div>
+        {% endif %}
+    </div>
 </body>
 </html>
